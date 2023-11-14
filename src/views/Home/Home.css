@@ -5,10 +5,65 @@
     border: 1px solid #ddd;
     padding: 20px ;
     position: relative;
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+  
 }
 .from-text{
     position: absolute;
     right: 10px;
     bottom: 10px;
+}
+.diwali-lamp{
+    height: 50px;
+    position: absolute;
+    top:10px;
+}
+.left-lamp{
+   left: 10px;
+}
+.right-lamp{
+    right: 10px;
+}
+.lamp{
+    height: 50px;
+    position: absolute;
+    bottom: 50px;
+    right: 40px;
+}
 
+.them-1{
+    background-color: #eab3b3;
+background-image: linear-gradient(180deg, #eab3b3 0%, #6284FF 50%, #f2bcbc 100%);
+
+}
+.them-2{
+    background-color: #8EC5FC;
+    background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+    
+}
+.them-3{
+    background-color: #FBAB7E;
+    background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+    
+
+}
+.them-4{
+    background-color: #98bfdd;
+    background-image: linear-gradient(135deg, #98bfdd 0%, #9599E2 100%);
+    
+
+}
+.them-5{
+    background-color: #A9C9FF;
+background-image: linear-gradient(180deg, #A9C9FF 0%, #FFBBEC 100%);
+
+}
+
+@media screen and (max-width: 768px){ 
+    .greeting-container{
+        width: 80%;
+    }
+    
 }

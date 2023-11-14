@@ -1,5 +1,7 @@
 import {useSearchParams} from "react-router-dom";
 import "./Home.css";
+import Diwalilamp from "./diwali-lamp.png";
+import Lamp from "./lamp.png";
 
 
 const GREETINGS = [
@@ -18,19 +20,34 @@ function Home() {
 
      const to = searchParams.get("to");
      const from = searchParams.get("from");
-     const greetingNumber = searchParams.get("g")>=      GREETINGS.length ? 0 : searchParams.get("g") || 0;
+     const greetingNumber = searchParams.get("g") >= GREETINGS.length ? 0 : searchParams.get("g") || 0;
+     const themNumber = searchParams.get("t") ;
 
     return (
-        <div className="greeting-container">
-           <span>Dear {to}💐</span>
+
+        <div>
+
+        <div className={`greeting-container ${`them-${themNumber}`}`}>
+
+            <img src={Diwalilamp} className="diwali-lamp left-lamp"/>
+
+
+            <img src={Diwalilamp} className="diwali-lamp right-lamp"/>
+           
+            <br/><br/><br/>
+
+           <h2>Dear {to}💐</h2>
            <p>
              {GREETINGS[greetingNumber]}
            </p>
 
-           <span className="from-text">
+           <h3 className="from-text">
             🙏From {from}
-            </span>
-           
+            </h3>
+            <br/><br/><br/>
+            <img src={Lamp} className="lamp"/>
+        </div>
+
         </div>
     )
 }
