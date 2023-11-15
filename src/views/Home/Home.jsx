@@ -2,6 +2,11 @@ import {useSearchParams} from "react-router-dom";
 import "./Home.css";
 import Diwalilamp from "./diwali-lamp.png";
 import Lamp from "./lamp.png";
+import { useState } from "react";
+
+// import dotenv from "dotenv";
+// dotenv.config();
+// import Process from 'process';
 
 
 const GREETINGS = [
@@ -18,10 +23,10 @@ const GREETINGS = [
 function Home() {
      const [searchParams] = useSearchParams();
 
-     const to = searchParams.get("to");
-     const from = searchParams.get("from");
-     const greetingNumber = searchParams.get("g") >= GREETINGS.length ? 0 : searchParams.get("g") || 0;
-     const themNumber = searchParams.get("t") ;
+     const [to, setTo] = useState(searchParams.get("to"));
+     const [from, setFrom] = useState(searchParams.get("from"));
+     const [greetingNumber, setGreetingNumber] = useState( searchParams.get("g") >= GREETINGS.length ? 0 : searchParams.get("g") || 0 );
+     const [themNumber, setThemNumber] = useState(searchParams.get("t"));
 
     return (
 
@@ -35,7 +40,7 @@ function Home() {
             <img src={Diwalilamp} className="diwali-lamp right-lamp"/>
            
             <br/><br/><br/>
-
+                
            <h2>Dear {to}💐</h2>
            <p>
              {GREETINGS[greetingNumber]}
@@ -45,9 +50,64 @@ function Home() {
             🙏From {from}
             </h3>
             <br/><br/><br/>
+
             <img src={Lamp} className="lamp"/>
         </div>
+       <br/><br/>
 
+       <p className="create-your-own">
+        Do you want to create your own Greetings? customize it here 👇
+        </p> 
+       
+       <p className="url">{import.meta.env.VITE_BASE_URL}?to={to}&from={from}&g={greetingNumber}&t={themNumber}</p>
+
+     <div className="input-container">
+        <input type="text" placeholder="To" 
+          className="input"
+          value={to}
+           onChange={(e) => { 
+            setTo(e.target.value)
+          }
+        } />
+
+        <input type="text" placeholder="From" 
+          className="input"
+          value={from}
+           onChange={(e) => { 
+            setFrom(e.target.value)
+          }
+        } />
+
+        <select value={greetingNumber} 
+            className="input"
+            onChange={(e) => {
+            setGreetingNumber(e.target.value)
+        }}>
+            <option value="0">Greeting 1</option>
+            <option value="1">Greeting 2</option>
+            <option value="2">Greeting 3</option>
+            <option value="3">Greeting 4</option>
+         </select>
+
+         <select value={themNumber} 
+              className="input"
+            onChange={(e) => {
+            setThemNumber(e.target.value)
+        }}>
+            <option value="0">None</option>
+            <option value="1">Theam 1</option>
+            <option value="2">Theam 2</option>
+            <option value="3">Theam 3</option>
+            <option value="4">Theam 4</option>
+            <option value="5">Theam 5</option>
+
+
+            
+         </select>
+     </div>
+
+       
+        
         </div>
     )
 }
