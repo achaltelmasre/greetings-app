@@ -1,14 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+}
 .greeting-container{
-    background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 0 10px black;
-    border: 1px solid #ddd;
+    color: white;
     padding: 20px ;
-    position: relative;
+    position: a;
     width: 50%;
-    display: block;
+     position: relative;
+    /* display: inline-block;  */
+    /* margin:  100px  400px; */
     margin: 0 auto;
+    display: block;
+    top: 150px;
+   
+      
   
+}
+.main-cintainer{
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;   
+
+}
+.greet{
+    font-size: 25px;
+    padding: 10px;
 }
 .from-text{
     position: absolute;
@@ -34,31 +53,27 @@
 }
 
 .them-1{
-    background-color: #eab3b3;
-background-image: linear-gradient(180deg, #eab3b3 0%, #6284FF 50%, #f2bcbc 100%);
-
+    background-image: url(./img/bg-1.jpg);
+  
 }
 .them-2{
-    background-color: #8EC5FC;
-    background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+    background-image: url(./img/bg-2.jpg);
     
 }
 .them-3{
-    background-color: #FBAB7E;
-    background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
-    
+    background-image: url(./img/bg-3.jpg);   
 
 }
 .them-4{
-    background-color: #98bfdd;
-    background-image: linear-gradient(135deg, #98bfdd 0%, #9599E2 100%);
+    background-image: url(./img/bg-4.jpg);
     
-
 }
 .them-5{
-    background-color: #A9C9FF;
-background-image: linear-gradient(180deg, #A9C9FF 0%, #FFBBEC 100%);
+    background-image: url(./img/bg-5.jpg);
 
+}
+.them-6{
+    background-image: url(./img/bg-6.jpg);
 }
 
 .input-container{
@@ -69,35 +84,54 @@ background-image: linear-gradient(180deg, #A9C9FF 0%, #FFBBEC 100%);
 .input{
     width: 200px;
     margin:  10px 20px;
-    padding: 5px 20px;
+    padding: 10px 20px;
+    background-color: white;
+    outline: none;
+    opacity: 0.5;
+    border: none;
+    margin-top: 20px;
+   
 }
 .url{
    
     text-align: center;
-    background-color:#cfcfde;
+    margin:  0 auto;
+    font-size: 17px;
+    color: blue;
+    width: 500px;
+    box-shadow: 0 0 10px rgb(24, 19, 8);
     padding:10px
+
 }
 .create-your-own{
     font-size: 20px;
     text-align: center;
-    margin-top: 100px;
+    margin-top: 300px;
+    padding: 15px;
+}
+.text-center{
+    text-align: center;
 }
 
 
 
 @media screen and (max-width: 768px){ 
     .greeting-container{
-        width: 80%;
+        width: 80%
     }
 
     .input{
         width: 80%;
         margin: 10px 0;
-        padding: 5px;
+        padding: 10px;
+        margin-top: 20px;
     }
 
     .input-container{
         flex-direction: column;
     }
-    
+    .main-cintainer{
+        height: 100%;
+    }
+   
 }
